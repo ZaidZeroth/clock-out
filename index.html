@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7fa">
+    <title>Clock-Out — Career Fair Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="intro">
+        <p class="eyebrow">CLOCK-OUT · PLAYABLE SLICE</p>
+        <h1>Career Fair Cart</h1>
+        <p class="goal">Work together to guide the runaway cart into the safe bay before it hits the booth.</p>
+      </header>
+
+      <section class="controls" aria-label="Player controls">
+        <article class="player-card teacher-card">
+          <span class="player-mark teacher-mark" aria-hidden="true">T</span>
+          <div>
+            <h2>Teacher</h2>
+            <p><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move <span class="joiner">·</span> <kbd>F</kbd> mark route</p>
+          </div>
+        </article>
+        <article class="player-card chef-card">
+          <span class="player-mark chef-mark" aria-hidden="true">C</span>
+          <div>
+            <h2>Chef</h2>
+            <p><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> move <span class="joiner">·</span> <kbd>/</kbd> redirect cart</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="game-panel" aria-label="Game">
+        <div class="game-hud">
+          <p class="instruction">Teacher marks the path. Chef sweeps the cart into the bay.</p>
+          <p class="timer" id="timer" aria-label="Time until the cart moves"><span id="timer-caption">Cart moves in</span> <strong>8.0</strong><span id="timer-unit">s</span></p>
+        </div>
+        <canvas id="game" width="960" height="560" aria-label="Two-player game arena. Teacher and Chef work together to redirect a runaway cart into the safe bay."></canvas>
+        <div class="status-row">
+          <p id="status" role="status" aria-live="polite">Move both characters close to the cart. The marked path lasts 1.5 seconds.</p>
+          <button id="reset" type="button" hidden>Play again</button>
+        </div>
+      </section>
+
+      <footer>
+        <span>One keyboard · two players · one very busy cart</span>
+        <span>Controls are provisional and can be changed for your keyboard.</span>
+      </footer>
+    </main>
+  </body>
+</html>
